@@ -158,6 +158,74 @@ h2 {
 .project-box img:hover {
     transform:scale(1.05);
 }
+/* ===== MODERN ABOUT SECTION ===== */
+
+.about-modern {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:60px;
+    padding:120px 60px;
+    background:#0f172a;
+}
+
+.about-left h2 {
+    font-size:40px;
+    margin:0;
+    color:#94a3b8;
+}
+
+.about-left h1 {
+    font-size:70px;
+    margin:10px 0;
+}
+
+.about-left span {
+    color:#3b82f6;
+}
+
+.about-right {
+    max-width:600px;
+}
+
+.about-right p {
+    line-height:1.7;
+    color:#cbd5e1;
+    font-size:17px;
+}
+
+.about-buttons {
+    margin-top:30px;
+    display:flex;
+    gap:20px;
+}
+
+.btn-outline {
+    padding:12px 28px;
+    border:2px solid #3b82f6;
+    border-radius:30px;
+    text-decoration:none;
+    color:#3b82f6;
+    transition:0.3s;
+}
+
+.btn-outline:hover {
+    background:#3b82f6;
+    color:white;
+}
+
+.btn-solid {
+    padding:12px 28px;
+    background:#3b82f6;
+    border-radius:30px;
+    text-decoration:none;
+    color:white;
+    transition:0.3s;
+}
+
+.btn-solid:hover {
+    opacity:0.8;
+}
 
 </style>
 
@@ -178,17 +246,29 @@ h2 {
 <p>Data Analyst | Power BI Specialist | Business Intelligence Developer</p>
 </div>
 
-<section id="about">
-<h2>About Me</h2>
-<p>
-<p>
-<strong>Hello! I'm Jena.</strong><br><br>
-Data Reporting / Analyst / Reconciliation professional with a proven track record in various analytical roles, showcasing expertise in end-to-end business processes within the Investment / Financial Industry. 
+<section id="about" class="about-modern">
 
-Skilled in DAX Queries, Google Sheets, Microsoft Excel, Statistics, SQL, Power BI, and Google Looker Studio for comprehensive data analysis and visualization.
+    <div class="about-left">
+        <h2>Hello,</h2>
+        <h1>I’m <span>Jena</span>.</h1>
+    </div>
 
-Comfortable with end-to-end data analysis, data processing, dashboard and daily reporting creation, and presenting actionable insights through effective communication and engaging dashboards.
-</p>
+    <div class="about-right">
+        <p>
+            Data Reporting / Analyst professional with proven experience in investment operations, financial analytics, and dashboard development. 
+
+            Skilled in <strong>SQL, Power BI, Excel, and Data Modeling</strong> with strong expertise in reconciliation, exception monitoring, and regulatory reporting.
+
+            I specialize in transforming complex datasets into clear, actionable insights that support business decision-making.
+        </p>
+
+        <div class="about-buttons">
+            <a href="#projects" class="btn-outline">View Projects</a>
+            <a href="LANGOYAN.CV.pdf" class="btn-solid" target="_blank">Download CV</a>
+        </div>
+    </div>
+
+</section>
 
 </p>
 </section>

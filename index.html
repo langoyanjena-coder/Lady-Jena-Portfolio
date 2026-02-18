@@ -248,27 +248,114 @@ h2 {
 <p>Data Analyst | Power BI Specialist | Business Intelligence Developer</p>
 </div>
 
-<section id="about" class="about-modern">
+<section id="about" class="about-hero">
 
-    <div class="about-left">
-        <h2>Hello,</h2>
-        <h1>I’m <span>Jena</span>!</h1>
-    </div>
+    <div class="about-container">
 
-    <div class="about-right">
-        <p>
-            Data Reporting / Analyst professional with proven experience in investment operations, financial analytics, and dashboard development. 
+        <div class="about-text">
+            <h2>Hello, I’m <span>Jena!</span></h2>
 
-            Skilled in <strong>SQL, Power BI, Excel, and Data Modeling</strong> with strong expertise in reconciliation, exception monitoring, and regulatory reporting.
+            <p>
+            Data Reporting / Analyst professional with proven experience in investment operations,
+            financial analytics, and dashboard development. Skilled in SQL, Power BI, Excel, and
+            Data Modeling with strong expertise in reconciliation, exception monitoring,
+            and regulatory reporting. I specialize in transforming complex datasets into
+            clear, actionable insights that support business decision-making.
+            </p>
 
-            I specialize in transforming complex datasets into clear, actionable insights that support business decision-making.
-        </p>
-
-        <div class="about-buttons">
-            <a href="#projects" class="btn-outline">View Projects</a>
-            <a href="LANGOYAN.CV.pdf" class="btn-solid" target="_blank">Download CV</a>
+            <div class="about-buttons">
+                <a href="#projects" class="btn-outline">View Projects</a>
+                <a href="LANGOYAN.CV.pdf" class="btn-filled" target="_blank">Download CV</a>
+            </div>
         </div>
+
+        <div class="about-image">
+            <img src="images/data-illustration.png" alt="Data Illustration">
+        </div>
+
     </div>
+/* ===== ABOUT HERO SECTION ===== */
+
+.about-hero {
+    padding:100px 60px;
+    background:linear-gradient(135deg, #0f172a, #1e293b);
+}
+
+.about-container {
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:60px;
+    max-width:1200px;
+    margin:auto;
+}
+
+.about-text {
+    flex:1;
+}
+
+.about-text h2 {
+    font-size:42px;
+    margin-bottom:20px;
+}
+
+.about-text h2 span {
+    color:#3b82f6;
+}
+
+.about-text p {
+    color:#cbd5e1;
+    line-height:1.8;
+    margin-bottom:30px;
+}
+
+.about-buttons {
+    display:flex;
+    gap:20px;
+}
+
+.about-image {
+    flex:1;
+    text-align:center;
+}
+
+.about-image img {
+    max-width:100%;
+    border-radius:20px;
+    box-shadow:0 20px 40px rgba(0,0,0,0.5);
+}
+
+/* Buttons */
+
+.btn-outline {
+    padding:12px 28px;
+    border:2px solid #3b82f6;
+    color:#3b82f6;
+    border-radius:30px;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+.btn-outline:hover {
+    background:#3b82f6;
+    color:white;
+}
+
+.btn-filled {
+    padding:12px 28px;
+    background:#3b82f6;
+    color:white;
+    border-radius:30px;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+.btn-filled:hover {
+    background:#2563eb;
+}
+
+</section>
+
 
 </section>
 <section class="skills" id="skills">

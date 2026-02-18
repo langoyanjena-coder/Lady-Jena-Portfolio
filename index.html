@@ -35,38 +35,32 @@ nav a{
 }
 nav a:hover{ color:#3b82f6; }
 
-/* HERO (BLENDED BACKGROUND LIKE YOUR SAMPLE) */
+/* =========================
+   HERO (REDESIGNED - CLEAN)
+   ========================= */
 .about-hero{
   position:relative;
   overflow:hidden;
   padding:110px 60px 90px;
-  background: linear-gradient(135deg,#0b1326 0%, #0f172a 55%, #0b1b34 100%);
+  background:
+    radial-gradient(circle at 20% 15%, rgba(59,130,246,0.18) 0%, rgba(15,23,42,0) 45%),
+    radial-gradient(circle at 85% 35%, rgba(59,130,246,0.12) 0%, rgba(15,23,42,0) 50%),
+    linear-gradient(135deg,#0b1326 0%, #0f172a 55%, #0b1b34 100%);
 }
 
-/* Put the illustration behind everything */
 .about-hero::before{
   content:"";
   position:absolute;
   inset:0;
-  background: url("images/about-illustration.png") no-repeat right center;
-  background-size: cover;
+  background:
+    linear-gradient(rgba(148,163,184,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148,163,184,0.06) 1px, transparent 1px);
+  background-size: 48px 48px;
+  -webkit-mask-image: radial-gradient(circle at 35% 30%, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 70%);
+  mask-image: radial-gradient(circle at 35% 30%, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 70%);
+  pointer-events:none;
+  opacity:0.7;
   z-index:0;
-  pointer-events:none;
-}
-
-/* Soft blend overlay so the image fades into the left side */
-.about-hero::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background: radial-gradient(circle at 24% 45%,
-      rgba(15,23,42,0.96) 0%,
-      rgba(15,23,42,0.72) 38%,
-      rgba(15,23,42,0.35) 62%,
-      rgba(15,23,42,0.00) 86%
-  );
-  z-index:1;
-  pointer-events:none;
 }
 
 .about-container{
@@ -78,12 +72,13 @@ nav a:hover{ color:#3b82f6; }
 
 .hero-top{
   text-align:center;
-  margin-bottom:55px;
+  margin-bottom:52px;
 }
 .hero-top h1{
   margin:0;
   font-size:56px;
   font-weight:800;
+  letter-spacing:0.2px;
 }
 .hero-top p{
   margin:14px 0 0;
@@ -94,18 +89,18 @@ nav a:hover{ color:#3b82f6; }
 .hero-grid{
   display:flex;
   gap:60px;
-  align-items:center;
+  align-items:flex-start;
 }
 
-/* Left content */
 .about-text{
   flex:1;
-  max-width:560px;
+  max-width:620px;
 }
+
 .about-text h2{
   font-size:46px;
   font-weight:800;
-  margin:0 0 18px 0;
+  margin:0 0 14px 0;
   color:#fff;
 }
 .about-text h2 span{ color:#3b82f6; }
@@ -114,18 +109,88 @@ nav a:hover{ color:#3b82f6; }
   color:#cbd5e1;
   line-height:1.85;
   font-size:16.5px;
-  margin:0 0 26px 0;
+  margin:0 0 22px 0;
+}
+
+/* KPI chips */
+.kpi-row{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin:16px 0 26px 0;
+}
+.kpi{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:10px 12px;
+  border-radius:999px;
+  background: rgba(30,41,59,0.7);
+  border:1px solid rgba(148,163,184,0.18);
+  color:#e2e8f0;
+  font-size:13.5px;
+  backdrop-filter: blur(8px);
+}
+.kpi b{ color:#fff; font-weight:700; }
+.kpi .dot{
+  width:9px; height:9px; border-radius:50%;
+  background:#3b82f6;
+  box-shadow: 0 0 14px rgba(59,130,246,0.55);
+}
+
+/* Right panel */
+.hero-panel{
+  flex:1;
+  max-width:520px;
+  padding:22px;
+  border-radius:18px;
+  background: rgba(2,6,23,0.35);
+  border:1px solid rgba(148,163,184,0.16);
+  backdrop-filter: blur(10px);
+}
+
+.panel-title{
+  font-weight:800;
+  margin:0 0 10px 0;
+  font-size:16px;
+}
+.panel-sub{
+  color:#cbd5e1;
+  margin:0 0 16px 0;
+  font-size:14px;
+  line-height:1.6;
+}
+
+.panel-list{
+  display:grid;
+  gap:10px;
+  margin:0;
+  padding:0;
+  list-style:none;
+}
+.panel-item{
+  display:flex;
+  justify-content:space-between;
+  gap:14px;
+  padding:12px 14px;
+  border-radius:12px;
+  background: rgba(15,23,42,0.55);
+  border:1px solid rgba(148,163,184,0.12);
+}
+.panel-item span{
+  color:#cbd5e1;
+  font-size:13.5px;
+}
+.panel-item strong{
+  color:#fff;
+  font-size:13.5px;
 }
 
 .about-buttons{
   display:flex;
-  gap:18px;
-}
-
-/* Right side spacer: keeps the layout like the sample */
-.hero-spacer{
-  flex:1;
-  min-height:380px;
+  gap:14px;
+  flex-wrap:wrap;
+  margin-top:4px;
 }
 
 /* BUTTONS */
@@ -208,8 +273,8 @@ nav a:hover{ color:#3b82f6; }
   .about-hero{ padding:85px 25px 70px; }
   .hero-top h1{ font-size:40px; }
   .hero-top p{ font-size:16px; }
-  .hero-grid{ flex-direction:column; gap:28px; }
-  .hero-spacer{ min-height:220px; width:100%; }
+  .hero-grid{ flex-direction:column; gap:22px; }
+  .hero-panel{ max-width:100%; }
 }
 </style>
 </head>
@@ -237,15 +302,21 @@ nav a:hover{ color:#3b82f6; }
     <div class="hero-grid">
       <div class="about-text">
         <h2>Hello, I’m <span>Jena!</span></h2>
+
         <p>
           Data Reporting / Analyst professional with proven experience in investment
           operations, financial analytics, and dashboard development.
           Skilled in <strong>SQL, Power BI, Excel, and Data Modeling</strong>
           with strong expertise in reconciliation, exception monitoring,
-          and regulatory reporting. I specialize in transforming complex
-          datasets into clear, actionable insights that support
-          business decision-making.
+          and regulatory reporting.
         </p>
+
+        <div class="kpi-row">
+          <div class="kpi"><span class="dot"></span><b>Power BI</b> Dashboards</div>
+          <div class="kpi"><span class="dot"></span><b>SQL</b> Reporting</div>
+          <div class="kpi"><span class="dot"></span><b>Reconciliation</b> & Exceptions</div>
+          <div class="kpi"><span class="dot"></span><b>Automation</b> & Data Quality</div>
+        </div>
 
         <div class="about-buttons">
           <a href="#projects" class="btn-outline">View Projects</a>
@@ -253,7 +324,27 @@ nav a:hover{ color:#3b82f6; }
         </div>
       </div>
 
-      <div class="hero-spacer"></div>
+      <aside class="hero-panel">
+        <p class="panel-title">What I deliver</p>
+        <p class="panel-sub">
+          Executive-ready reporting that highlights risks, trends, and actionable insights.
+        </p>
+
+        <ul class="panel-list">
+          <li class="panel-item">
+            <span>Dashboards</span><strong>Executive + Operations</strong>
+          </li>
+          <li class="panel-item">
+            <span>Focus</span><strong>Cash / Position Exceptions</strong>
+          </li>
+          <li class="panel-item">
+            <span>Outputs</span><strong>KPIs, Trends, Drill-through</strong>
+          </li>
+          <li class="panel-item">
+            <span>Tools</span><strong>Power BI, SQL, Excel</strong>
+          </li>
+        </ul>
+      </aside>
     </div>
 
   </div>

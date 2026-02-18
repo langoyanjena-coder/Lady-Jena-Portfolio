@@ -94,16 +94,17 @@ nav a:hover{ color:#3b82f6; }
 /* Hero image as normal <img> (stable) */
 .hero-image{
   flex:1;
-  display:flex;
-  justify-content:flex-end;
+  min-height:420px;
+  background:
+    /* this gradient is the “blend” */
+    radial-gradient(circle at 30% 50%, rgba(15,23,42,0.95) 0%, rgba(15,23,42,0.55) 40%, rgba(15,23,42,0.0) 70%),
+    url("images/about-illustration.png");
+  background-repeat:no-repeat;
+  background-position:right center;
+  background-size:cover;     /* KEY: cover removes box feel */
+  border-radius:0;           /* IMPORTANT: remove the card look */
 }
-.hero-image img{
-  width:100%;
-  max-width:620px;
-  height:auto;
-  display:block;
-  border-radius:16px;     /* optional */
-  opacity:0.95;
+
 }
 
 /* BUTTONS */
@@ -231,9 +232,7 @@ nav a:hover{ color:#3b82f6; }
         </div>
       </div>
 
-      <div class="hero-image">
-        <img src="images/about-illustration.png" alt="Data Illustration">
-      </div>
+      <div class="hero-image"></div>
     </div>
 
   </div>

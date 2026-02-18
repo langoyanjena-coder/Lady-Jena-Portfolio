@@ -1,447 +1,393 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Lady Jena Langoyan | Data Analyst</title>
-
 <style>
-*{ box-sizing:border-box; }
-body{
-  margin:0;
-  font-family: Arial, sans-serif;
-  background:#0f172a;
-  color:#fff;
+/* ===== EXPERIENCE SECTION ===== */
+
+.experience {
+    padding:80px 60px;
 }
 
-section{ padding:80px 60px; }
-h2{ color:#3b82f6; margin:0 0 20px 0; }
-
-/* NAV */
-nav{
-  display:flex;
-  justify-content:space-between;
-  padding:20px 60px;
-  background:#020617;
-  position:sticky;
-  top:0;
-  z-index:1000;
-}
-nav a{
-  color:#94a3b8;
-  text-decoration:none;
-  margin-left:20px;
-  font-weight:500;
-}
-nav a:hover{ color:#3b82f6; }
-
-/* =========================
-   HERO (REDESIGNED - CLEAN)
-   ========================= */
-.about-hero{
-  position:relative;
-  overflow:hidden;
-  padding:110px 60px 90px;
-  background:
-    radial-gradient(circle at 20% 15%, rgba(59,130,246,0.18) 0%, rgba(15,23,42,0) 45%),
-    radial-gradient(circle at 85% 35%, rgba(59,130,246,0.12) 0%, rgba(15,23,42,0) 50%),
-    linear-gradient(135deg,#0b1326 0%, #0f172a 55%, #0b1b34 100%);
+.experience h2 {
+    color:#3b82f6;
+    margin-bottom:40px;
 }
 
-.about-hero::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:
-    linear-gradient(rgba(148,163,184,0.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(148,163,184,0.06) 1px, transparent 1px);
-  background-size: 48px 48px;
-  -webkit-mask-image: radial-gradient(circle at 35% 30%, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 70%);
-  mask-image: radial-gradient(circle at 35% 30%, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 70%);
-  pointer-events:none;
-  opacity:0.7;
-  z-index:0;
+.exp-card {
+    background:#1e293b;
+    padding:25px;
+    border-radius:12px;
+    margin-bottom:25px;
+    transition:0.3s;
 }
 
-.about-container{
-  position:relative;
-  z-index:2;
-  max-width:1200px;
-  margin:0 auto;
+.exp-card:hover {
+    transform:translateY(-5px);
+    box-shadow:0 10px 25px rgba(0,0,0,0.4);
 }
 
-.hero-top{
-  text-align:center;
-  margin-bottom:52px;
-}
-.hero-top h1{
-  margin:0;
-  font-size:56px;
-  font-weight:800;
-  letter-spacing:0.2px;
-}
-.hero-top p{
-  margin:14px 0 0;
-  color:#cbd5e1;
-  font-size:18px;
+.exp-title {
+    font-weight:bold;
+    font-size:18px;
+    margin-bottom:5px;
 }
 
-.hero-grid{
-  display:flex;
-  gap:60px;
-  align-items:flex-start;
+.exp-company {
+    color:#3b82f6;
+    margin-bottom:10px;
 }
 
-.about-text{
-  flex:1;
-  max-width:620px;
+.exp-desc {
+    color:#cbd5e1;
+    font-size:14px;
 }
 
-.about-text h2{
-  font-size:46px;
-  font-weight:800;
-  margin:0 0 14px 0;
-  color:#fff;
-}
-.about-text h2 span{ color:#3b82f6; }
+/* ===== SKILLS SECTION ===== */
 
-.about-text p{
-  color:#cbd5e1;
-  line-height:1.85;
-  font-size:16.5px;
-  margin:0 0 22px 0;
+.skills {
+    padding:60px;
 }
 
-/* KPI chips */
-.kpi-row{
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
-  margin:16px 0 26px 0;
-}
-.kpi{
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
-  padding:10px 12px;
-  border-radius:999px;
-  background: rgba(30,41,59,0.7);
-  border:1px solid rgba(148,163,184,0.18);
-  color:#e2e8f0;
-  font-size:13.5px;
-  backdrop-filter: blur(8px);
-}
-.kpi b{ color:#fff; font-weight:700; }
-.kpi .dot{
-  width:9px; height:9px; border-radius:50%;
-  background:#3b82f6;
-  box-shadow: 0 0 14px rgba(59,130,246,0.55);
+.skills h2 {
+    color:#3b82f6;
+    margin-bottom:30px;
 }
 
-/* Right panel */
-.hero-panel{
-  flex:1;
-  max-width:520px;
-  padding:22px;
-  border-radius:18px;
-  background: rgba(2,6,23,0.35);
-  border:1px solid rgba(148,163,184,0.16);
-  backdrop-filter: blur(10px);
+.skills-grid {
+    display:flex;
+    flex-wrap:wrap;
+    gap:30px;
 }
 
-.panel-title{
-  font-weight:800;
-  margin:0 0 10px 0;
-  font-size:16px;
-}
-.panel-sub{
-  color:#cbd5e1;
-  margin:0 0 16px 0;
-  font-size:14px;
-  line-height:1.6;
+.skill-card {
+    background:#1e293b;
+    padding:25px;
+    border-radius:12px;
+    width:220px;
+    text-align:center;
+    transition:0.3s;
+    cursor:pointer;
 }
 
-.panel-list{
-  display:grid;
-  gap:10px;
-  margin:0;
-  padding:0;
-  list-style:none;
-}
-.panel-item{
-  display:flex;
-  justify-content:space-between;
-  gap:14px;
-  padding:12px 14px;
-  border-radius:12px;
-  background: rgba(15,23,42,0.55);
-  border:1px solid rgba(148,163,184,0.12);
-}
-.panel-item span{
-  color:#cbd5e1;
-  font-size:13.5px;
-}
-.panel-item strong{
-  color:#fff;
-  font-size:13.5px;
+
+.skill-card:hover {
+    transform:translateY(-5px);
+    box-shadow:0 10px 25px rgba(0,0,0,0.4);
 }
 
-.about-buttons{
-  display:flex;
-  gap:14px;
-  flex-wrap:wrap;
-  margin-top:4px;
+.skill-icon {
+    font-size:40px;
+    margin-bottom:15px;
+    color:#3b82f6;
 }
 
-/* BUTTONS */
-.btn-outline{
-  padding:12px 28px;
-  border:2px solid #3b82f6;
-  border-radius:30px;
-  text-decoration:none;
-  color:#3b82f6;
-  transition:0.25s;
+.skill-title {
+    font-weight:bold;
+    margin-bottom:10px;
 }
-.btn-outline:hover{ background:#3b82f6; color:#fff; }
 
-.btn-filled{
-  padding:12px 28px;
-  background:#3b82f6;
-  color:#fff;
-  border-radius:30px;
-  text-decoration:none;
-  transition:0.25s;
+.skill-desc {
+    font-size:14px;
+    color:#cbd5e1;
 }
-.btn-filled:hover{ background:#2563eb; }
 
-/* SKILLS */
-.skills-grid{
-  display:flex;
-  flex-wrap:wrap;
-  gap:30px;
+body {
+    margin:0;
+    font-family: Arial, sans-serif;
+    background:#0f172a;
+    color:white;
 }
-.skill-card{
-  background:#1e293b;
-  padding:25px;
-  border-radius:12px;
-  width:220px;
-  text-align:center;
-  transition:0.25s;
-}
-.skill-card:hover{
-  transform:translateY(-5px);
-  box-shadow:0 10px 25px rgba(0,0,0,0.4);
-}
-.skill-icon{ font-size:40px; margin-bottom:15px; color:#3b82f6; }
-.skill-title{ font-weight:bold; margin-bottom:10px; }
-.skill-desc{ font-size:14px; color:#cbd5e1; }
 
-/* PROJECTS */
-.project-box{
-  background:#1e293b;
-  padding:30px;
-  border-radius:10px;
-  margin-top:20px;
+nav {
+    display:flex;
+    justify-content:space-between;
+    padding:20px 60px;
+    background:#020617;
+    position:sticky;
+    top:0;
 }
-.project-box img{
-  border-radius:8px;
-  transition:0.25s;
-  box-shadow:0 4px 15px rgba(0,0,0,0.4);
-}
-.project-box img:hover{ transform:scale(1.04); }
 
-/* EXPERIENCE */
-.exp-card{
-  background:#1e293b;
-  padding:25px;
-  border-radius:12px;
-  margin-bottom:25px;
-  transition:0.25s;
+nav a {
+    color:#94a3b8;
+    text-decoration:none;
+    margin-left:20px;
 }
-.exp-card:hover{
-  transform:translateY(-5px);
-  box-shadow:0 10px 25px rgba(0,0,0,0.4);
-}
-.exp-title{ font-weight:bold; font-size:18px; margin-bottom:5px; }
-.exp-company{ color:#3b82f6; margin-bottom:10px; }
-.exp-desc{ color:#cbd5e1; font-size:14px; }
 
-/* MOBILE */
-@media (max-width: 900px){
-  nav{ padding:18px 25px; }
-  section{ padding:60px 25px; }
-  .about-hero{ padding:85px 25px 70px; }
-  .hero-top h1{ font-size:40px; }
-  .hero-top p{ font-size:16px; }
-  .hero-grid{ flex-direction:column; gap:22px; }
-  .hero-panel{ max-width:100%; }
+nav a:hover {
+    color:#3b82f6;
 }
+
+.hero {
+    text-align:center;
+    padding:120px 20px;
+}
+
+.hero h1 {
+    font-size:55px;
+}
+
+.hero p {
+    color:#94a3b8;
+    font-size:20px;
+}
+
+section {
+    padding:80px 60px;
+}
+
+h2 {
+    color:#3b82f6;
+    margin-bottom:20px;
+}
+
+.project-box {
+    background:#1e293b;
+    padding:30px;
+    border-radius:10px;
+    margin-top:20px;
+}
+    .project-box img {
+    border-radius:8px;
+    transition:0.3s;
+    box-shadow:0 4px 15px rgba(0,0,0,0.4);
+}
+
+.project-box img:hover {
+    transform:scale(1.05);
+}
+/* ===== MODERN ABOUT SECTION ===== */
+
+.about-modern {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:60px;
+    padding:120px 60px;
+    background:#0f172a;
+}
+
+.about-left h2 {
+    font-size:40px;
+    margin:0;
+    color:#94a3b8;
+}
+
+.about-left h1 {
+    font-size:70px;
+    margin:10px 0;
+}
+
+.about-left span {
+    color:#3b82f6;
+}
+
+.about-right {
+    max-width:600px;
+}
+
+.about-right p {
+    line-height:1.7;
+    color:#cbd5e1;
+    font-size:17px;
+}
+
+.about-buttons {
+    margin-top:30px;
+    display:flex;
+    gap:20px;
+}
+
+.btn-outline {
+    padding:12px 28px;
+    border:2px solid #3b82f6;
+    border-radius:30px;
+    text-decoration:none;
+    color:#3b82f6;
+    transition:0.3s;
+}
+
+.btn-outline:hover {
+    background:#3b82f6;
+    color:white;
+}
+
+.btn-solid {
+    padding:12px 28px;
+    background:#3b82f6;
+    border-radius:30px;
+    text-decoration:none;
+    color:white;
+    transition:0.3s;
+}
+
+.btn-solid:hover {
+    opacity:0.8;
+}
+
 </style>
-</head>
 
+</head>
 <body>
 
 <nav>
-  <div>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#experience">Work Experience</a>
-    <a href="#contact">Contact</a>
-  </div>
+<div>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#projects">Projects</a>
+<a href="#workexperience">Work Experience</a>
+<a href="#contact">Contact</a>
+
+</div>
 </nav>
 
-<section id="about" class="about-hero">
-  <div class="about-container">
+<div class="hero">
+<h1>Lady Jena Langoyan</h1>
+<p>Data Analyst | Power BI Specialist | Business Intelligence Developer</p>
+</div>
 
-    <div class="hero-top">
-      <h1>Lady Jena Langoyan</h1>
-      <p>Data Analyst | Power BI Specialist | Business Intelligence Developer</p>
+<section id="about" class="about-modern">
+
+    <div class="about-left">
+        <h2>Hello,</h2>
+        <h1>I’m <span>Jena</span>!</h1>
     </div>
 
-    <div class="hero-grid">
-      <div class="about-text">
-        <h2>Hello, I’m <span>Jena!</span></h2>
-
+    <div class="about-right">
         <p>
-          Data Reporting / Analyst professional with proven experience in investment
-          operations, financial analytics, and dashboard development.
-          Skilled in <strong>SQL, Power BI, Excel, and Data Modeling</strong>
-          with strong expertise in reconciliation, exception monitoring,
-          and regulatory reporting.
-        </p>
+            Data Reporting / Analyst professional with proven experience in investment operations, financial analytics, and dashboard development. 
 
-        <div class="kpi-row">
-          <div class="kpi"><span class="dot"></span><b>Power BI</b> Dashboards</div>
-          <div class="kpi"><span class="dot"></span><b>SQL</b> Reporting</div>
-          <div class="kpi"><span class="dot"></span><b>Reconciliation</b> & Exceptions</div>
-          <div class="kpi"><span class="dot"></span><b>Automation</b> & Data Quality</div>
-        </div>
+            Skilled in <strong>SQL, Power BI, Excel, and Data Modeling</strong> with strong expertise in reconciliation, exception monitoring, and regulatory reporting.
+
+            I specialize in transforming complex datasets into clear, actionable insights that support business decision-making.
+        </p>
 
         <div class="about-buttons">
-          <a href="#projects" class="btn-outline">View Projects</a>
-          <a href="LANGOYAN.CV.pdf" class="btn-filled" target="_blank">Download CV</a>
+            <a href="#projects" class="btn-outline">View Projects</a>
+            <a href="LANGOYAN.CV.pdf" class="btn-solid" target="_blank">Download CV</a>
         </div>
-      </div>
-
-      <aside class="hero-panel">
-        <p class="panel-title">What I deliver</p>
-        <p class="panel-sub">
-          Executive-ready reporting that highlights risks, trends, and actionable insights.
-        </p>
-
-        <ul class="panel-list">
-          <li class="panel-item">
-            <span>Dashboards</span><strong>Executive + Operations</strong>
-          </li>
-          <li class="panel-item">
-            <span>Focus</span><strong>Cash / Position Exceptions</strong>
-          </li>
-          <li class="panel-item">
-            <span>Outputs</span><strong>KPIs, Trends, Drill-through</strong>
-          </li>
-          <li class="panel-item">
-            <span>Tools</span><strong>Power BI, SQL, Excel</strong>
-          </li>
-        </ul>
-      </aside>
     </div>
 
-  </div>
 </section>
+<section class="skills" id="skills">
+    <h2>Skills</h2>
 
-<section id="skills">
-  <h2>Skills</h2>
-  <div class="skills-grid">
-    <div class="skill-card">
-      <div class="skill-icon">📊</div>
-      <div class="skill-title">Power BI & DAX</div>
-      <div class="skill-desc">Dashboard development, data modeling, advanced DAX calculations.</div>
+    <div class="skills-grid">
+
+        <div class="skill-card">
+            <div class="skill-icon">📊</div>
+            <div class="skill-title">Power BI & DAX</div>
+            <div class="skill-desc">Dashboard development, data modeling, advanced DAX calculations.</div>
+        </div>
+
+        <div class="skill-card">
+            <div class="skill-icon">🗄️</div>
+            <div class="skill-title">SQL</div>
+            <div class="skill-desc">Complex queries, reconciliation checks, and performance analysis.</div>
+        </div>
+
+        <div class="skill-card">
+            <div class="skill-icon">📈</div>
+            <div class="skill-title">Financial Reporting</div>
+            <div class="skill-desc">Investment reporting, AML analytics, and reconciliation processes.</div>
+        </div>
+
+        <div class="skill-card">
+            <div class="skill-icon">📑</div>
+            <div class="skill-title">Excel & Google Sheets</div>
+            <div class="skill-desc">Advanced formulas, pivot tables, automation and reporting.</div>
+        </div>
+
     </div>
-    <div class="skill-card">
-      <div class="skill-icon">🗄️</div>
-      <div class="skill-title">SQL</div>
-      <div class="skill-desc">Complex queries, reconciliation checks, and performance analysis.</div>
-    </div>
-    <div class="skill-card">
-      <div class="skill-icon">📈</div>
-      <div class="skill-title">Financial Reporting</div>
-      <div class="skill-desc">Investment reporting, AML analytics, and reconciliation processes.</div>
-    </div>
-    <div class="skill-card">
-      <div class="skill-icon">📑</div>
-      <div class="skill-title">Excel & Google Sheets</div>
-      <div class="skill-desc">Advanced formulas, pivot tables, automation and reporting.</div>
-    </div>
-  </div>
+</p>
 </section>
 
 <section id="projects">
-  <h2>Projects</h2>
+<h2>Projects</h2>
 
-  <div class="project-box">
-    <h3>Restaurant Sales Dashboard</h3>
-    <p>Interactive Power BI dashboard analyzing sales performance, category trends, top-selling items, and payment breakdown.</p>
-    <div style="margin-top:20px; display:flex; flex-wrap:wrap; gap:15px;">
-      <img src="images/1.png.jpg" width="300" alt="Project 1">
-      <img src="images/2.png.jpg" width="300" alt="Project 2">
-      <img src="images/3.png.jpg" width="300" alt="Project 3">
-      <img src="images/4.png.jpg" width="300" alt="Project 4">
-    </div>
-  </div>
+<div class="project-box">
+<h3>Restaurant Sales Dashboard</h3>
+<p>
+Interactive Power BI dashboard analyzing sales performance,
+category trends, top-selling items, and payment breakdown.
+</p>
 
-  <div class="project-box">
-    <h3>Sales & Profit Performance Dashboard</h3>
-    <p>Executive-level dashboard analyzing profit margin, COGS, discount impact, and segment-level sales performance.</p>
-    <div style="margin-top:20px; display:flex; flex-wrap:wrap; gap:15px;">
-      <img src="images/sales1.png.png" width="300" alt="Sales 1">
-      <img src="images/sales2.png.png" width="300" alt="Sales 2">
-      <img src="images/sales3.png.png" width="300" alt="Sales 3">
-    </div>
-  </div>
+<div style="margin-top:20px; display:flex; flex-wrap:wrap; gap:15px;">
+<img src="images/1.png.jpg" width="300">
+<img src="images/2.png.jpg" width="300">
+<img src="images/3.png.jpg" width="300">
+<img src="images/4.png.jpg" width="300">
+
+</div>
+
+</div>
+
+
+<div class="project-box">
+<h3>Sales & Profit Performance Dashboard</h3>
+<p>
+Executive-level dashboard analyzing profit margin, COGS,
+discount impact, and segment-level sales performance.
+</p>
+
+<div style="margin-top:20px; display:flex; flex-wrap:wrap; gap:15px;">
+<img src="images/sales1.png.png" width="300">
+<img src="images/sales2.png.png" width="300">
+<img src="images/sales3.png.png" width="300">
+
+</div>
+
+</div>
+
+
 </section>
+<section class="experience" id="experience">
+<h2>Work Experience</h2>
 
-<section id="experience">
-  <h2>Work Experience</h2>
-
-  <div class="exp-card">
+<div class="exp-card">
     <div class="exp-title">Data Analyst (Freelance)</div>
     <div class="exp-company">Remote | Sep 2024 – Dec 2025</div>
     <div class="exp-desc">
-      • Consolidated multi-channel sales and financial datasets to deliver actionable insights supporting client decision-making.<br>
-      • Designed interactive dashboards using Excel, SQL, and Power BI to visualize revenue performance and customer trends.
+        • Consolidated multi-channel sales and financial datasets to deliver actionable insights supporting client decision-making.<br>
+        • Designed interactive dashboards using Excel, SQL, and Power BI to visualize revenue performance and customer trends.
     </div>
-  </div>
+</div>
 
-  <div class="exp-card">
+<div class="exp-card">
     <div class="exp-title">Investment Data Analyst</div>
     <div class="exp-company">Manulife Investment Management | Aug 2022 – Aug 2025</div>
     <div class="exp-desc">
-      • Generated end-of-day (EOD) cash and position exception reports, ensuring reconciliation accuracy between internal systems and external bank records.<br>
-      • Developed automated Power BI dashboards that reduced manual reporting effort by 60% and improved operational reporting efficiency.
+        • Generated end-of-day (EOD) cash and position exception reports, ensuring reconciliation accuracy between internal systems and external bank records.<br>
+        • Developed automated Power BI dashboards that reduced manual reporting effort by 60% and improved operational reporting efficiency.
     </div>
-  </div>
+</div>
 
-  <div class="exp-card">
+<div class="exp-card">
     <div class="exp-title">Accounts Receivable / Data Analyst</div>
     <div class="exp-company">Distribution Company | Aug 2017 – July 2022</div>
     <div class="exp-desc">
-      • Built Power BI and Excel dashboards to monitor AR KPIs, aging reports, and collection performance.<br>
-      • Analyzed payment trends and conducted root-cause investigations on overdue accounts to improve cash flow forecasting.
+        • Built Power BI and Excel dashboards to monitor AR KPIs, aging reports, and collection performance.<br>
+        • Analyzed payment trends and conducted root-cause investigations on overdue accounts to improve cash flow forecasting.
     </div>
-  </div>
+</div>
+
+</section>
+
+
 </section>
 
 <section id="contact">
-  <h2>Let’s Connect and Work Together</h2>
-  <p>Email: langoyanjena@gmail.com</p>
-  <p>Phone: 09304533189</p>
-  <p>
-    LinkedIn:
-    <a href="https://www.linkedin.com/in/lady-jena-langoyan-73136111b" target="_blank" style="color:#3b82f6;">
-      View Profile
-    </a>
-  </p>
+<h2>Let’s Connect and Work Together</h2>
+<p>Email: langoyanjena@gmail.com</p>
+<p>Phone: 09304533189</p>
+<p>
+LinkedIn:
+<a href="https://www.linkedin.com/in/lady-jena-langoyan-73136111b" target="_blank" style="color:#3b82f6;">
+View Profile
+</a>
+</p>
 </section>
 
 </body>

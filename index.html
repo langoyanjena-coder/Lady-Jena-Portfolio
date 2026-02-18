@@ -1,299 +1,278 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lady Jena Langoyan | Data Analyst</title>
-<style>
-/* ===== EXPERIENCE SECTION ===== */
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lady Jena Langoyan | Data Analyst</title>
 
-.experience {
-    padding:80px 60px;
-}
+  <!-- Premium font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-.experience h2 {
-    color:#3b82f6;
-    margin-bottom:40px;
-}
+  <style>
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      font-family: "Inter", Arial, sans-serif;
+      background:#0f172a;
+      color:#fff;
+    }
 
-.exp-card {
-    background:#1e293b;
-    padding:25px;
-    border-radius:12px;
-    margin-bottom:25px;
-    transition:0.3s;
-}
+    /* GLOBAL */
+    section{ padding:80px 60px; }
+    h2{ color:#3b82f6; margin:0 0 20px 0; }
 
-.exp-card:hover {
-    transform:translateY(-5px);
-    box-shadow:0 10px 25px rgba(0,0,0,0.4);
-}
+    /* NAV */
+    nav{
+      display:flex;
+      justify-content:space-between;
+      padding:20px 60px;
+      background:#020617;
+      position:sticky;
+      top:0;
+      z-index:1000;
+    }
+    nav a{
+      color:#94a3b8;
+      text-decoration:none;
+      margin-left:20px;
+      font-weight:500;
+    }
+    nav a:hover{ color:#3b82f6; }
 
-.exp-title {
-    font-weight:bold;
-    font-size:18px;
-    margin-bottom:5px;
-}
+    /* ===== PREMIUM HERO / ABOUT ===== */
+    .about-hero{
+      position:relative;
+      overflow:hidden;
+      min-height: calc(100vh - 70px);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding: 110px 25px;
 
-.exp-company {
-    color:#3b82f6;
-    margin-bottom:10px;
-}
+      background:
+        radial-gradient(circle at 15% 20%, rgba(59,130,246,0.22), transparent 40%),
+        radial-gradient(circle at 85% 65%, rgba(59,130,246,0.16), transparent 45%),
+        linear-gradient(135deg,#070b1a 0%, #0b1226 50%, #070f22 100%);
+    }
 
-.exp-desc {
-    color:#cbd5e1;
-    font-size:14px;
-}
+    /* your background illustration (more visible) */
+    .about-hero::before{
+      content:"";
+      position:absolute;
+      inset:-40px;
+      background:url("images/about-illustration.png") no-repeat center;
+      background-size:cover;
+      opacity:0.30; /* more visible */
+      filter:saturate(1.2) contrast(1.12);
+      z-index:0;
+      pointer-events:none;
+    }
 
-/* ===== SKILLS SECTION ===== */
+    /* overlay for readability */
+    .about-hero::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        radial-gradient(circle at 30% 50%, rgba(7,11,26,0.96) 0%, rgba(7,11,26,0.82) 38%, rgba(7,11,26,0.30) 72%, rgba(7,11,26,0.00) 92%),
+        rgba(2,6,23,0.30);
+      z-index:1;
+      pointer-events:none;
+    }
 
-.skills {
-    padding:60px;
-}
+    /* floating icons */
+    .floating-icons{
+      position:absolute;
+      inset:0;
+      z-index:2;
+      pointer-events:none;
+    }
+    .float-icon{
+      position:absolute;
+      width:56px;
+      height:56px;
+      opacity:0.22;
+      filter: drop-shadow(0 10px 18px rgba(0,0,0,0.35));
+      animation: floatY 7s ease-in-out infinite;
+    }
+    .float-icon:nth-child(2){ animation-duration: 9s; opacity:0.18; }
+    .float-icon:nth-child(3){ animation-duration: 8s; opacity:0.20; }
+    .float-icon:nth-child(4){ animation-duration: 10s; opacity:0.16; }
+    .float-icon:nth-child(5){ animation-duration: 11s; opacity:0.14; }
 
-.skills h2 {
-    color:#3b82f6;
-    margin-bottom:30px;
-}
+    @keyframes floatY{
+      0%,100%{ transform: translateY(0) translateX(0); }
+      50%{ transform: translateY(-18px) translateX(6px); }
+    }
 
-.skills-grid {
-    display:flex;
-    flex-wrap:wrap;
-    gap:30px;
-}
+    /* center glass card */
+    .about-center{
+      position:relative;
+      z-index:3;
+      width:min(980px, 92vw);
+      text-align:center;
+      padding:40px 38px;
+      border-radius:22px;
+      background: rgba(2,6,23,0.40);
+      border: 1px solid rgba(148,163,184,0.18);
+      box-shadow: 0 18px 50px rgba(0,0,0,0.35);
+      backdrop-filter: blur(12px);
+    }
 
-.skill-card {
-    background:#1e293b;
-    padding:25px;
-    border-radius:12px;
-    width:220px;
-    text-align:center;
-    transition:0.3s;
-    cursor:pointer;
-}
+    .about-center h2{
+      font-size: clamp(36px, 4vw, 58px);
+      font-weight: 800;
+      margin:0 0 12px 0;
+      letter-spacing:-0.02em;
+      color:#fff;
+    }
+    .about-center h2 span{ color:#3b82f6; }
 
+    .about-center p{
+      color:#cbd5e1;
+      font-size:17px;
+      line-height:1.9;
+      margin:0 auto 24px auto;
+      max-width:820px;
+    }
 
-.skill-card:hover {
-    transform:translateY(-5px);
-    box-shadow:0 10px 25px rgba(0,0,0,0.4);
-}
+    .about-buttons{
+      display:flex;
+      gap:14px;
+      justify-content:center;
+      flex-wrap:wrap;
+      margin-top:10px;
+    }
 
-.skill-icon {
-    font-size:40px;
-    margin-bottom:15px;
-    color:#3b82f6;
-}
+    /* BUTTONS */
+    .btn-outline, .btn-solid{ font-weight:600; letter-spacing:0.2px; }
 
-.skill-title {
-    font-weight:bold;
-    margin-bottom:10px;
-}
+    .btn-outline{
+      padding:12px 28px;
+      border:1.8px solid rgba(59,130,246,0.85);
+      border-radius:999px;
+      text-decoration:none;
+      color:#93c5fd;
+      transition:0.25s;
+      background: rgba(2,6,23,0.10);
+    }
+    .btn-outline:hover{
+      background: rgba(59,130,246,0.18);
+      border-color:#3b82f6;
+      color:#fff;
+      transform: translateY(-1px);
+    }
 
-.skill-desc {
-    font-size:14px;
-    color:#cbd5e1;
-}
+    .btn-solid{
+      padding:12px 28px;
+      background: linear-gradient(135deg,#3b82f6,#2563eb);
+      border-radius:999px;
+      text-decoration:none;
+      color:#fff;
+      transition:0.25s;
+      box-shadow: 0 10px 25px rgba(37,99,235,0.25);
+    }
+    .btn-solid:hover{ transform: translateY(-1px); opacity:0.95; }
 
-body {
-    margin:0;
-    font-family: Arial, sans-serif;
-    background:#0f172a;
-    color:white;
-}
+    /* ===== SKILLS ===== */
+    .skills{ padding:80px 60px; }
+    .skills-grid{
+      display:flex;
+      flex-wrap:wrap;
+      gap:30px;
+    }
+    .skill-card{
+      background:#1e293b;
+      padding:25px;
+      border-radius:12px;
+      width:220px;
+      text-align:center;
+      transition:0.25s;
+      cursor:pointer;
+    }
+    .skill-card:hover{
+      transform:translateY(-5px);
+      box-shadow:0 10px 25px rgba(0,0,0,0.4);
+    }
+    .skill-icon{ font-size:40px; margin-bottom:15px; color:#3b82f6; }
+    .skill-title{ font-weight:bold; margin-bottom:10px; }
+    .skill-desc{ font-size:14px; color:#cbd5e1; }
 
-nav {
-    display:flex;
-    justify-content:space-between;
-    padding:20px 60px;
-    background:#020617;
-    position:sticky;
-    top:0;
-}
+    /* ===== PROJECTS ===== */
+    .project-box{
+      background:#1e293b;
+      padding:30px;
+      border-radius:10px;
+      margin-top:20px;
+    }
+    .project-box img{
+      border-radius:8px;
+      transition:0.25s;
+      box-shadow:0 4px 15px rgba(0,0,0,0.4);
+    }
+    .project-box img:hover{ transform:scale(1.05); }
 
-nav a {
-    color:#94a3b8;
-    text-decoration:none;
-    margin-left:20px;
-}
+    /* ===== EXPERIENCE ===== */
+    .experience{ padding:80px 60px; }
+    .experience h2{ margin-bottom:40px; }
 
-nav a:hover {
-    color:#3b82f6;
-}
+    .exp-card{
+      background:#1e293b;
+      padding:25px;
+      border-radius:12px;
+      margin-bottom:25px;
+      transition:0.25s;
+    }
+    .exp-card:hover{
+      transform:translateY(-5px);
+      box-shadow:0 10px 25px rgba(0,0,0,0.4);
+    }
+    .exp-title{ font-weight:bold; font-size:18px; margin-bottom:5px; }
+    .exp-company{ color:#3b82f6; margin-bottom:10px; }
+    .exp-desc{ color:#cbd5e1; font-size:14px; }
 
-.hero {
-    text-align:center;
-    padding:120px 20px;
-}
+    /* MOBILE */
+    @media (max-width: 900px){
+      nav{ padding:18px 25px; }
+      section, .skills, .experience{ padding:60px 25px; }
 
-.hero h1 {
-    font-size:55px;
-}
+      .about-hero{ padding:90px 18px; min-height: auto; }
+      .about-center{ padding:26px; }
 
-.hero p {
-    color:#94a3b8;
-    font-size:20px;
-}
+      .float-icon{ width:44px; height:44px; opacity:0.16; }
 
-section {
-    padding:80px 60px;
-}
-
-h2 {
-    color:#3b82f6;
-    margin-bottom:20px;
-}
-
-.project-box {
-    background:#1e293b;
-    padding:30px;
-    border-radius:10px;
-    margin-top:20px;
-}
-    .project-box img {
-    border-radius:8px;
-    transition:0.3s;
-    box-shadow:0 4px 15px rgba(0,0,0,0.4);
-}
-
-.project-box img:hover {
-    transform:scale(1.05);
-}
-/* ===== MODERN ABOUT SECTION ===== */
-
-/* HERO (Centered + background icons design) */
-.about-hero{
-  position:relative;
-  overflow:hidden;
-  min-height: calc(100vh - 70px); /* full screen minus nav */
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding: 80px 25px;
-
-  background: linear-gradient(135deg,#0b1326 0%, #0f172a 55%, #0b1b34 100%);
-}
-
-/* Data-analytics ICONS / DESIGN layer (image pattern) */
-.about-hero::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background: url("images/about-illustration.png")
- no-repeat center;
-  background-size: cover;
-  opacity: 0.18;                 /* adjust 0.10 - 0.25 */
-  filter: blur(0.2px);
-  z-index:0;
-  pointer-events:none;
-}
-
-/* dark overlay so text is readable */
-.about-hero::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:
-    radial-gradient(circle at 50% 35%, rgba(59,130,246,0.16) 0%, rgba(15,23,42,0) 55%),
-    rgba(2,6,23,0.55);
-  z-index:1;
-  pointer-events:none;
-}
-
-/* Center content card */
-.about-center{
-  position:relative;
-  z-index:2;
-  width:min(900px, 92vw);
-  text-align:center;
-
-  padding: 34px 34px;
-  border-radius: 18px;
-  background: rgba(2,6,23,0.35);
-  border: 1px solid rgba(148,163,184,0.16);
-  backdrop-filter: blur(10px);
-}
-
-.about-center h2{
-  font-size: 54px;
-  font-weight: 800;
-  margin: 0 0 14px 0;
-  color:#fff;
-}
-
-.about-center h2 span{ color:#3b82f6; }
-
-.about-center p{
-  color:#cbd5e1;
-  font-size: 17px;
-  line-height: 1.9;
-  margin: 0 auto 22px auto;
-  max-width: 760px;
-}
-
-.about-buttons{
-  display:flex;
-  gap:14px;
-  justify-content:center;
-  flex-wrap:wrap;
-}
-
-/* Mobile tweaks */
-@media (max-width: 900px){
-  .about-center h2{ font-size: 38px; }
-  .about-center{ padding: 24px; }
-
-}
-
-.about-buttons {
-    margin-top:30px;
-    display:flex;
-    gap:20px;
-}
-
-.btn-outline {
-    padding:12px 28px;
-    border:2px solid #3b82f6;
-    border-radius:30px;
-    text-decoration:none;
-    color:#3b82f6;
-    transition:0.3s;
-}
-
-.btn-outline:hover {
-    background:#3b82f6;
-    color:white;
-}
-
-.btn-solid {
-    padding:12px 28px;
-    background:#3b82f6;
-    border-radius:30px;
-    text-decoration:none;
-    color:white;
-    transition:0.3s;
-}
-
-.btn-solid:hover {
-    opacity:0.8;
-}
-
-</style>
-
+      .skills-grid{ gap:16px; }
+      .skill-card{ width:100%; max-width:520px; }
+      .project-box img{ width:100%; max-width:520px; }
+    }
+  </style>
 </head>
+
 <body>
 
 <nav>
-<div>
-<a href="#about">About</a>
-<a href="#skills">Skills</a>
-<a href="#projects">Projects</a>
-<a href="#workexperience">Work Experience</a>
-<a href="#contact">Contact</a>
-
-</div>
+  <div>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#experience">Work Experience</a>
+    <a href="#contact">Contact</a>
+  </div>
 </nav>
 
 <section id="about" class="about-hero">
+
+  <!-- floating icons (you must add these icon files in /images/) -->
+  <div class="floating-icons">
+    <img class="float-icon" src="images/icon-chart.png" style="top:14%; left:10%;" alt="">
+    <img class="float-icon" src="images/icon-pie.png"   style="top:22%; right:12%;" alt="">
+    <img class="float-icon" src="images/icon-db.png"    style="bottom:18%; left:14%;" alt="">
+    <img class="float-icon" src="images/icon-ai.png"    style="bottom:16%; right:16%;" alt="">
+    <img class="float-icon" src="images/icon-line.png"  style="top:52%; right:6%;" alt="">
+  </div>
+
   <div class="about-center">
     <h2>Hello, I’m <span>Jena!</span></h2>
 
@@ -309,127 +288,106 @@ h2 {
 
     <div class="about-buttons">
       <a href="#projects" class="btn-outline">View Projects</a>
-      <a href="LANGOYAN.CV.pdf" class="btn-solid"
-" target="_blank">Download CV</a>
+      <a href="LANGOYAN.CV.pdf" class="btn-solid" target="_blank">Download CV</a>
     </div>
   </div>
 </section>
 
 <section class="skills" id="skills">
-    <h2>Skills</h2>
-
-    <div class="skills-grid">
-
-        <div class="skill-card">
-            <div class="skill-icon">📊</div>
-            <div class="skill-title">Power BI & DAX</div>
-            <div class="skill-desc">Dashboard development, data modeling, advanced DAX calculations.</div>
-        </div>
-
-        <div class="skill-card">
-            <div class="skill-icon">🗄️</div>
-            <div class="skill-title">SQL</div>
-            <div class="skill-desc">Complex queries, reconciliation checks, and performance analysis.</div>
-        </div>
-
-        <div class="skill-card">
-            <div class="skill-icon">📈</div>
-            <div class="skill-title">Financial Reporting</div>
-            <div class="skill-desc">Investment reporting, AML analytics, and reconciliation processes.</div>
-        </div>
-
-        <div class="skill-card">
-            <div class="skill-icon">📑</div>
-            <div class="skill-title">Excel & Google Sheets</div>
-            <div class="skill-desc">Advanced formulas, pivot tables, automation and reporting.</div>
-        </div>
-
+  <h2>Skills</h2>
+  <div class="skills-grid">
+    <div class="skill-card">
+      <div class="skill-icon">📊</div>
+      <div class="skill-title">Power BI & DAX</div>
+      <div class="skill-desc">Dashboard development, data modeling, advanced DAX calculations.</div>
     </div>
-</p>
+
+    <div class="skill-card">
+      <div class="skill-icon">🗄️</div>
+      <div class="skill-title">SQL</div>
+      <div class="skill-desc">Complex queries, reconciliation checks, and performance analysis.</div>
+    </div>
+
+    <div class="skill-card">
+      <div class="skill-icon">📈</div>
+      <div class="skill-title">Financial Reporting</div>
+      <div class="skill-desc">Investment reporting, AML analytics, and reconciliation processes.</div>
+    </div>
+
+    <div class="skill-card">
+      <div class="skill-icon">📑</div>
+      <div class="skill-title">Excel & Google Sheets</div>
+      <div class="skill-desc">Advanced formulas, pivot tables, automation and reporting.</div>
+    </div>
+  </div>
 </section>
 
 <section id="projects">
-<h2>Projects</h2>
+  <h2>Projects</h2>
 
-<div class="project-box">
-<h3>Restaurant Sales Dashboard</h3>
-<p>
-Interactive Power BI dashboard analyzing sales performance,
-category trends, top-selling items, and payment breakdown.
-</p>
+  <div class="project-box">
+    <h3>Restaurant Sales Dashboard</h3>
+    <p>Interactive Power BI dashboard analyzing sales performance, category trends, top-selling items, and payment breakdown.</p>
+    <div style="margin-top:20px; display:flex; flex-wrap:wrap; gap:15px;">
+      <img src="images/1.png.jpg" width="300" alt="Project 1">
+      <img src="images/2.png.jpg" width="300" alt="Project 2">
+      <img src="images/3.png.jpg" width="300" alt="Project 3">
+      <img src="images/4.png.jpg" width="300" alt="Project 4">
+    </div>
+  </div>
 
-<div style="margin-top:20px; display:flex; flex-wrap:wrap; gap:15px;">
-<img src="images/1.png.jpg" width="300">
-<img src="images/2.png.jpg" width="300">
-<img src="images/3.png.jpg" width="300">
-<img src="images/4.png.jpg" width="300">
-
-</div>
-
-</div>
-
-
-<div class="project-box">
-<h3>Sales & Profit Performance Dashboard</h3>
-<p>
-Executive-level dashboard analyzing profit margin, COGS,
-discount impact, and segment-level sales performance.
-</p>
-
-<div style="margin-top:20px; display:flex; flex-wrap:wrap; gap:15px;">
-<img src="images/sales1.png.png" width="300">
-<img src="images/sales2.png.png" width="300">
-<img src="images/sales3.png.png" width="300">
-
-</div>
-
-</div>
-
-
+  <div class="project-box">
+    <h3>Sales & Profit Performance Dashboard</h3>
+    <p>Executive-level dashboard analyzing profit margin, COGS, discount impact, and segment-level sales performance.</p>
+    <div style="margin-top:20px; display:flex; flex-wrap:wrap; gap:15px;">
+      <img src="images/sales1.png.png" width="300" alt="Sales 1">
+      <img src="images/sales2.png.png" width="300" alt="Sales 2">
+      <img src="images/sales3.png.png" width="300" alt="Sales 3">
+    </div>
+  </div>
 </section>
-<section class="experience" id="experience">
-<h2>Work Experience</h2>
 
-<div class="exp-card">
+<section class="experience" id="experience">
+  <h2>Work Experience</h2>
+
+  <div class="exp-card">
     <div class="exp-title">Data Analyst (Freelance)</div>
     <div class="exp-company">Remote | Sep 2024 – Dec 2025</div>
     <div class="exp-desc">
-        • Consolidated multi-channel sales and financial datasets to deliver actionable insights supporting client decision-making.<br>
-        • Designed interactive dashboards using Excel, SQL, and Power BI to visualize revenue performance and customer trends.
+      • Consolidated multi-channel sales and financial datasets to deliver actionable insights supporting client decision-making.<br>
+      • Designed interactive dashboards using Excel, SQL, and Power BI to visualize revenue performance and customer trends.
     </div>
-</div>
+  </div>
 
-<div class="exp-card">
+  <div class="exp-card">
     <div class="exp-title">Investment Data Analyst</div>
     <div class="exp-company">Manulife Investment Management | Aug 2022 – Aug 2025</div>
     <div class="exp-desc">
-        • Generated end-of-day (EOD) cash and position exception reports, ensuring reconciliation accuracy between internal systems and external bank records.<br>
-        • Developed automated Power BI dashboards that reduced manual reporting effort by 60% and improved operational reporting efficiency.
+      • Generated end-of-day (EOD) cash and position exception reports, ensuring reconciliation accuracy between internal systems and external bank records.<br>
+      • Developed automated Power BI dashboards that reduced manual reporting effort by 60% and improved operational reporting efficiency.
     </div>
-</div>
+  </div>
 
-<div class="exp-card">
+  <div class="exp-card">
     <div class="exp-title">Accounts Receivable / Data Analyst</div>
     <div class="exp-company">Distribution Company | Aug 2017 – July 2022</div>
     <div class="exp-desc">
-        • Built Power BI and Excel dashboards to monitor AR KPIs, aging reports, and collection performance.<br>
-        • Analyzed payment trends and conducted root-cause investigations on overdue accounts to improve cash flow forecasting.
+      • Built Power BI and Excel dashboards to monitor AR KPIs, aging reports, and collection performance.<br>
+      • Analyzed payment trends and conducted root-cause investigations on overdue accounts to improve cash flow forecasting.
     </div>
-</div>
-
-
+  </div>
 </section>
 
 <section id="contact">
-<h2>Let’s Connect and Work Together</h2>
-<p>Email: langoyanjena@gmail.com</p>
-<p>Phone: 09304533189</p>
-<p>
-LinkedIn:
-<a href="https://www.linkedin.com/in/lady-jena-langoyan-73136111b" target="_blank" style="color:#3b82f6;">
-View Profile
-</a>
-</p>
+  <h2>Let’s Connect and Work Together</h2>
+  <p>Email: langoyanjena@gmail.com</p>
+  <p>Phone: 09304533189</p>
+  <p>
+    LinkedIn:
+    <a href="https://www.linkedin.com/in/lady-jena-langoyan-73136111b" target="_blank" style="color:#3b82f6;">
+      View Profile
+    </a>
+  </p>
 </section>
 
 </body>

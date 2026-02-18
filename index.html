@@ -35,13 +35,43 @@ nav a{
 }
 nav a:hover{ color:#3b82f6; }
 
-/* HERO (NO PSEUDO ELEMENTS) */
+/* HERO (BLENDED BACKGROUND LIKE YOUR SAMPLE) */
 .about-hero{
+  position:relative;
+  overflow:hidden;
   padding:110px 60px 90px;
   background: linear-gradient(135deg,#0b1326 0%, #0f172a 55%, #0b1b34 100%);
 }
 
+/* Put the illustration behind everything */
+.about-hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: url("images/about-illustration.png") no-repeat right center;
+  background-size: cover;
+  z-index:0;
+  pointer-events:none;
+}
+
+/* Soft blend overlay so the image fades into the left side */
+.about-hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: radial-gradient(circle at 24% 45%,
+      rgba(15,23,42,0.96) 0%,
+      rgba(15,23,42,0.72) 38%,
+      rgba(15,23,42,0.35) 62%,
+      rgba(15,23,42,0.00) 86%
+  );
+  z-index:1;
+  pointer-events:none;
+}
+
 .about-container{
+  position:relative;
+  z-index:2;
   max-width:1200px;
   margin:0 auto;
 }
@@ -67,6 +97,7 @@ nav a:hover{ color:#3b82f6; }
   align-items:center;
 }
 
+/* Left content */
 .about-text{
   flex:1;
   max-width:560px;
@@ -91,20 +122,10 @@ nav a:hover{ color:#3b82f6; }
   gap:18px;
 }
 
-/* Hero image as normal <img> (stable) */
-.hero-image{
+/* Right side spacer: keeps the layout like the sample */
+.hero-spacer{
   flex:1;
-  min-height:420px;
-  background:
-    /* this gradient is the “blend” */
-    radial-gradient(circle at 30% 50%, rgba(15,23,42,0.95) 0%, rgba(15,23,42,0.55) 40%, rgba(15,23,42,0.0) 70%),
-    url("images/about-illustration.png");
-  background-repeat:no-repeat;
-  background-position:right center;
-  background-size:cover;     /* KEY: cover removes box feel */
-  border-radius:0;           /* IMPORTANT: remove the card look */
-}
-
+  min-height:380px;
 }
 
 /* BUTTONS */
@@ -180,6 +201,7 @@ nav a:hover{ color:#3b82f6; }
 .exp-company{ color:#3b82f6; margin-bottom:10px; }
 .exp-desc{ color:#cbd5e1; font-size:14px; }
 
+/* MOBILE */
 @media (max-width: 900px){
   nav{ padding:18px 25px; }
   section{ padding:60px 25px; }
@@ -187,8 +209,7 @@ nav a:hover{ color:#3b82f6; }
   .hero-top h1{ font-size:40px; }
   .hero-top p{ font-size:16px; }
   .hero-grid{ flex-direction:column; gap:28px; }
-  .hero-image{ justify-content:center; }
-  .hero-image img{ max-width:720px; border-radius:12px; }
+  .hero-spacer{ min-height:220px; width:100%; }
 }
 </style>
 </head>
@@ -232,7 +253,7 @@ nav a:hover{ color:#3b82f6; }
         </div>
       </div>
 
-      <div class="hero-image"></div>
+      <div class="hero-spacer"></div>
     </div>
 
   </div>

@@ -164,39 +164,8 @@
     .about-right{ min-height: 420px; }
 
     /* Floating premium “badges” */
-    .floating-icons{
-      position:absolute;
-      inset:0;
-      z-index:2;
-      pointer-events:none;
-    }
-
-    .float-badge{
-      position:absolute;
-      width:46px;
-      height:46px;
-      display:grid;
-      place-items:center;
-      border-radius:14px;
-      background: rgba(2,6,23,.38);
-      border: 1px solid rgba(148,163,184,.18);
-      backdrop-filter: blur(10px);
-      box-shadow: 0 10px 30px rgba(0,0,0,.25);
-      opacity:.9;
-      animation: floatY 6s ease-in-out infinite;
-      font-size:20px;
-    }
-
-    .b1{ top:18%; left:6%;  animation-delay: .0s; }
-    .b2{ top:38%; left:10%; animation-delay: .8s; }
-    .b3{ top:22%; right:10%; animation-delay: 1.2s; }
-    .b4{ bottom:22%; right:8%; animation-delay: .4s; }
-    .b5{ bottom:18%; left:18%; animation-delay: 1.6s; }
-
-    @keyframes floatY{
-      0%,100%{ transform: translateY(0); }
-      50%{ transform: translateY(-14px); }
-    }
+   
+  
 
     /* =========================
        SKILLS
@@ -341,7 +310,7 @@
       .about-hero::before{
         background-position: center bottom;
         background-size: cover;
-        opacity:.35;
+        opacity:.32;
       }
 
       .b1,.b2,.b3,.b4,.b5{ display:none; }
@@ -365,13 +334,7 @@
 
 <section id="about" class="about-hero">
 
-  <div class="floating-icons" aria-hidden="true">
-    <div class="float-badge b1">📊</div>
-    <div class="float-badge b2">📈</div>
-    <div class="float-badge b3">🧠</div>
-    <div class="float-badge b4">🗄️</div>
-    <div class="float-badge b5">⚙️</div>
-  </div>
+
 
   <div class="about-wrap">
     <div class="about-left">

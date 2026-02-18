@@ -107,65 +107,66 @@
       align-items:center;
     }
 
+    /* About title (bigger + premium) */
     .about-left h2{
       margin:0 0 14px 0;
-      font-size: clamp(40px, 4vw, 56px);
+      font-size: clamp(44px, 4.2vw, 62px);
       font-weight: 800;
       letter-spacing:-0.02em;
       color:#fff;
+      line-height:1.05;
     }
     .about-left h2 span{ color:#3b82f6; }
 
+    /* About paragraph (your requested bigger intro text) */
     .about-left p{
-  margin:0 0 26px 0;
-  max-width: 650px;
-  color:#d1d5db;
-
-  /* bigger intro text */
-  font-size: clamp(18px, 1.25vw, 22px);
-  line-height: 1.85;
-}
-
+      margin:0 0 26px 0;
+      max-width: 650px;
+      color:#d1d5db;
+      font-size: clamp(18px, 1.25vw, 22px);
+      line-height: 1.85;
     }
 
+    /* Buttons row */
     .about-buttons{
       display:flex;
-      gap:14px;
+      gap:18px;
       flex-wrap:wrap;
       align-items:center;
     }
 
     .btn-outline{
-      padding:12px 26px;
+      padding:14px 32px;
       border:2px solid #3b82f6;
       border-radius:999px;
       text-decoration:none;
       color:#93c5fd;
       font-weight:600;
-      transition:.25s;
+      transition:all .25s ease;
     }
     .btn-outline:hover{
       background:#3b82f6;
       color:#fff;
+      transform:translateY(-3px);
     }
 
     .btn-solid{
-      padding:12px 26px;
+      padding:14px 32px;
       background:#3b82f6;
       color:#fff;
       border-radius:999px;
       text-decoration:none;
       font-weight:600;
-      transition:.25s;
+      transition:all .25s ease;
       box-shadow: 0 10px 25px rgba(59,130,246,.25);
     }
-    .btn-solid:hover{ filter:brightness(.95); }
+    .btn-solid:hover{
+      filter:brightness(.95);
+      transform:translateY(-3px);
+      box-shadow: 0 14px 34px rgba(59,130,246,.35);
+    }
 
     .about-right{ min-height: 420px; }
-
-    /* Floating premium “badges” */
-   
-  
 
     /* =========================
        SKILLS
@@ -313,8 +314,6 @@
         opacity:.32;
       }
 
-      .b1,.b2,.b3,.b4,.b5{ display:none; }
-
       .project-box img{ width:100%; }
     }
   </style>
@@ -333,9 +332,6 @@
 </nav>
 
 <section id="about" class="about-hero">
-
-
-
   <div class="about-wrap">
     <div class="about-left">
       <h2>Hello, I’m <span>Jena!</span></h2>
@@ -351,18 +347,18 @@
       </p>
 
       <div class="about-buttons">
-        <a href="images/Lady-Jena-Langoyan-CV.pdf" 
-   class="btn-solid" 
-   target="_blank">
-   Download CV
-</a>
+        <!-- View Projects button RESTORED -->
+        <a href="#projects" class="btn-outline">View Projects</a>
 
+        <!-- CV link FIXED (matches your repo file name/location) -->
+        <a href="images/Lady-Jena-Langoyan-CV.pdf.pdf" class="btn-solid" target="_blank">
+          Download CV
+        </a>
       </div>
     </div>
 
     <div class="about-right"></div>
   </div>
-
 </section>
 
 <section class="skills" id="skills">

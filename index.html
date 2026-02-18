@@ -158,40 +158,52 @@ h2 {
 .project-box img:hover {
     transform:scale(1.05);
 }
-/* ===== MODERN ABOUT SECTION ===== */
+/* ===== ABOUT HERO SECTION ===== */
 
-.about-modern {
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:60px;
-    padding:120px 60px;
-    background:#0f172a;
+.about-hero {
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    padding: 120px 60px;
 }
 
-.about-left h2 {
-    font-size:40px;
-    margin:0;
-    color:#94a3b8;
+.about-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+    max-width: 1200px;
+    margin: auto;
 }
 
-.about-left h1 {
-    font-size:70px;
-    margin:10px 0;
+.about-text {
+    flex: 1;
 }
 
-.about-left span {
-    color:#3b82f6;
+.about-text h2 {
+    font-size: 48px;
+    margin-bottom: 20px;
 }
 
-.about-right {
-    max-width:600px;
+.about-text h2 span {
+    color: #3b82f6;
 }
 
-.about-right p {
-    line-height:1.7;
-    color:#cbd5e1;
-    font-size:17px;
+.about-text p {
+    color: #cbd5e1;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    font-size: 17px;
+}
+
+.about-image {
+    flex: 1;
+    text-align: right;
+}
+
+.about-image img {
+    max-width: 100%;
+    border-radius: 20px;
+
+
 }
 
 .about-buttons {
@@ -318,15 +330,18 @@ h2 {
 
     <div class="about-container">
 
+        <!-- LEFT SIDE TEXT -->
         <div class="about-text">
             <h2>Hello, I’m <span>Jena!</span></h2>
 
             <p>
-            Data Reporting / Analyst professional with proven experience in investment operations,
-            financial analytics, and dashboard development. Skilled in SQL, Power BI, Excel, and
-            Data Modeling with strong expertise in reconciliation, exception monitoring,
-            and regulatory reporting. I specialize in transforming complex datasets into
-            clear, actionable insights that support business decision-making.
+                Data Reporting / Analyst professional with proven experience in investment
+                operations, financial analytics, and dashboard development.
+                Skilled in <strong>SQL, Power BI, Excel, and Data Modeling</strong>
+                with strong expertise in reconciliation, exception monitoring,
+                and regulatory reporting. I specialize in transforming complex
+                datasets into clear, actionable insights that support
+                business decision-making.
             </p>
 
             <div class="about-buttons">
@@ -335,8 +350,15 @@ h2 {
             </div>
         </div>
 
+        <!-- RIGHT SIDE IMAGE -->
         <div class="about-image">
-            <img src="images/data-illustration.png" alt="Data Illustration">
+            <img src="images/about-illustration.png" alt="Data Illustration">
+        </div>
+
+    </div>
+
+</section>
+
         </div>
 
     </div>

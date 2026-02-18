@@ -46,23 +46,37 @@ nav a:hover{
     color:#3b82f6;
 }
 
-/* ===== HERO SECTION (CLEAN NATURAL BLEND) ===== */
+/* ===== HERO SECTION (REAL BLEND FIX) ===== */
 .about-hero{
-    background:
-        linear-gradient(to right,
-            rgba(11,19,38,0.95) 0%,
-            rgba(11,19,38,0.85) 45%,
-            rgba(11,19,38,0.35) 70%,
-            rgba(11,19,38,0.15) 100%
-        ),
-        url("images/about-illustration.png");
-    background-repeat:no-repeat;
-    background-position:right center;
-    background-size:clamp(520px, 55vw, 820px);
+    position:relative;
+    overflow:hidden;
     padding:120px 60px;
+
+    background:
+        radial-gradient(circle at 30% 20%, rgba(59,130,246,0.15), transparent 45%),
+        linear-gradient(135deg, #0b1326, #0f172a 45%, #0b1b34);
+}
+
+/* IMAGE LAYER WITH SOFT EDGE FADE */
+.about-hero::after{
+    content:"";
+    position:absolute;
+    inset:0;
+
+    background:url("images/about-illustration.png") no-repeat right center;
+    background-size:clamp(650px, 60vw, 1000px);
+
+    opacity:0.95;
+    filter: drop-shadow(0 0 40px rgba(59,130,246,0.25));
+
+    /* MAGIC BLEND HERE */
+    -webkit-mask-image: radial-gradient(circle at 75% 55%, #000 0 40%, transparent 85%);
+    mask-image: radial-gradient(circle at 75% 55%, #000 0 40%, transparent 85%);
 }
 
 .about-container{
+    position:relative;
+    z-index:2;
     max-width:1200px;
     margin:auto;
 }
@@ -212,16 +226,14 @@ nav a:hover{
     nav{ padding:20px 25px; }
 
     .about-hero{
-        background:
-            linear-gradient(to bottom,
-                rgba(11,19,38,0.95) 0%,
-                rgba(11,19,38,0.85) 55%,
-                rgba(11,19,38,0.35) 100%
-            ),
-            url("images/about-illustration.png");
+        padding:90px 25px;
+    }
+
+    .about-hero::after{
         background-position:center bottom;
         background-size:cover;
-        padding:90px 25px;
+        -webkit-mask-image: radial-gradient(circle at 50% 60%, #000 0 35%, transparent 80%);
+        mask-image: radial-gradient(circle at 50% 60%, #000 0 35%, transparent 80%);
     }
 }
 
@@ -242,8 +254,8 @@ nav a:hover{
 <!-- HERO -->
 <section id="about" class="about-hero">
 <div class="about-container">
-
 <div class="about-text">
+
 <h2>Hello, I’m <span>Jena!</span></h2>
 
 <p>
@@ -263,76 +275,6 @@ business decision-making.
 
 </div>
 </div>
-</section>
-
-<!-- SKILLS -->
-<section class="skills" id="skills">
-<h2>Skills</h2>
-<div class="skills-grid">
-
-<div class="skill-card">
-<div class="skill-icon">📊</div>
-<div class="skill-title">Power BI & DAX</div>
-<div class="skill-desc">Dashboard development, data modeling, advanced DAX calculations.</div>
-</div>
-
-<div class="skill-card">
-<div class="skill-icon">🗄️</div>
-<div class="skill-title">SQL</div>
-<div class="skill-desc">Complex queries, reconciliation checks, and performance analysis.</div>
-</div>
-
-<div class="skill-card">
-<div class="skill-icon">📈</div>
-<div class="skill-title">Financial Reporting</div>
-<div class="skill-desc">Investment reporting, AML analytics, and reconciliation processes.</div>
-</div>
-
-<div class="skill-card">
-<div class="skill-icon">📑</div>
-<div class="skill-title">Excel & Google Sheets</div>
-<div class="skill-desc">Advanced formulas, pivot tables, automation and reporting.</div>
-</div>
-
-</div>
-</section>
-
-<!-- PROJECTS -->
-<section id="projects">
-<h2>Projects</h2>
-
-<div class="project-box">
-<h3>Restaurant Sales Dashboard</h3>
-<p>Interactive Power BI dashboard analyzing sales performance and trends.</p>
-<div style="margin-top:20px; display:flex; flex-wrap:wrap; gap:15px;">
-<img src="images/1.png.jpg" width="300">
-<img src="images/2.png.jpg" width="300">
-<img src="images/3.png.jpg" width="300">
-<img src="images/4.png.jpg" width="300">
-</div>
-</div>
-
-</section>
-
-<!-- EXPERIENCE -->
-<section class="experience" id="experience">
-<h2>Work Experience</h2>
-
-<div class="exp-card">
-<div class="exp-title">Investment Data Analyst</div>
-<div class="exp-company">Manulife Investment Management | Aug 2022 – Aug 2025</div>
-<div class="exp-desc">
-Generated EOD reconciliation reports and automated Power BI dashboards reducing manual work by 60%.
-</div>
-</div>
-
-</section>
-
-<!-- CONTACT -->
-<section id="contact">
-<h2>Let’s Connect</h2>
-<p>Email: langoyanjena@gmail.com</p>
-<p>Phone: 09304533189</p>
 </section>
 
 </body>
